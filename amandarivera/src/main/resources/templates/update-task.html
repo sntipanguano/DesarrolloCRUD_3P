@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Task</title>
+</head>
+<body>
+    <h1>Actualizar Tarea</h1>
+    <form th:action="@{/tasks/update/__${task.id}__}" th:object="${task}" method="post">
+        <input type="hidden" th:field="*{id}" />
+        <label>Nombre: <input type="text" th:field="*{name}" /></label><br/>
+        <label>Descripcion: <input type="text" th:field="*{description}" /></label><br/>
+        <label>Dia: <input type="text" th:field="*{date}" /></label><br/>
+        <label>Estado: <input type="text" th:field="*{state}" /></label><br/>
+        <input type="submit" value="Update" />
+    </form>
+    <a th:href="@{/tasks}" class="btn btn-primary">Regresar</a>
+</body>
+</html>
